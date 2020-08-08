@@ -4,6 +4,7 @@ export default class Embed {
     fields = []
     footer = "푸터"
     color = 0xff0000
+    imageURL = ""
 
     setTitle(title) {
         this.title = title
@@ -17,6 +18,10 @@ export default class Embed {
         this.description = desc
     }
 
+    setImage(url) {
+        this.imageURL = url
+    }
+
     addField(name, value, inline=false) {
         this.fields.push({name, value, inline})
     }
@@ -25,7 +30,10 @@ export default class Embed {
         return {
             title: this.title,
             description: this.description,
-            color: this.color
+            color: this.color,
+            image: {
+                url: this.imageURL
+            }
         }
     }
 }

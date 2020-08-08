@@ -53,6 +53,15 @@ class EmbedEditor extends Component {
                                        this.props.update()
                                    }} fullWidth/>
                     </div>
+                    <Typography style={{width: '100%', display: 'flex'}} variant="h6">
+                        이미지 <TextField
+                        value={this.props.embed.imageURL}
+                        onChange={e => {
+                            this.props.embed.setImage(e.target.value)
+                            this.props.update()
+                        }} style={{flexGrow: 1}}/>
+                    </Typography>
+                    <img src={this.props.embed.imageURL} alt="이미지" height={100}/>
                 </CardContent>
                 <CardActions>
                     <IconButton onClick={() => {

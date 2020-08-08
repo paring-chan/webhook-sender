@@ -74,15 +74,6 @@ class App extends Component {
                 'Content-Type': 'application/json'
             }
         })
-            .then(async res => {
-                if (res.status !== 200) {
-                    alert(`전송 실패: ${res.statusText}`)
-                } else {
-                    alert('전송되었습니다.')
-                }
-            })
-            .catch(e => alert(`전송 실패: ${e.message}`))
-        console.log(data)
     }
 
 }
